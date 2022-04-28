@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_play_graph.xml"
+    app:startDestination="@id/gamePlayFragment">
+    <fragment
+        android:id="@+id/gamePlayFragment"
+        android:name="com.safi.dicegame.ui.gamePlay.gamePlay.GamePlayFragment"
+        android:label="GamePlayFragment"
+        tools:layout="@layout/fragment_game_play" />
+</navigation>

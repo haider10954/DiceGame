@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="playerUIModel"
+            type="com.safi.dicegame.ui.model.PlayerUIModel" />
+
+        <import type="com.safi.dicegame.data.PlayerType" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/recycler_item_margin"
+        android:clickable="true"
+        android:elevation="@dimen/card_elevation"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/card_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/card_body_padding">
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:hint="@string/player_setup_screen_name_hint"
+                android:inputType="textPersonName"
+                android:text="@={playerUIModel.name}"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/etNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/player_setup_screen_number_hint"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="@={playerUIModel.number}"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@id/etName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/etName" />
+
+            <RadioGroup
+                android:id="@+id/rgPlayerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etName">
+
+                <RadioButton
+                    android:id="@+id/rgHuman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{playerUIModel.playerType == PlayerType.HUMAN}"
+                    android:onCheckedChanged="@{(view, isChecked) -> playerUIModel.onHumanClicked(isChecked)}"
+                    android:text="@string/setup_players_screen_rb_human_title" />
+
+                <RadioButton
+                    android:id="@+id/rgRobot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{playerUIModel.playerType == PlayerType.ROBOT}"
+                    android:onCheckedChanged="@{(view, isChecked) -> playerUIModel.onRobotClicked(isChecked)}"
+                    android:text="@string/setup_players_screen_rb_robot_title" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

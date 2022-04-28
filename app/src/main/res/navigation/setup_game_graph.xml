@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_graph"
+    app:startDestination="@id/opponentChooserFragment">
+
+    <fragment
+        android:id="@+id/opponentChooserFragment"
+        android:name="com.safi.dicegame.ui.setupGame.playersCountChooser.PlayersCountChooserFragment"
+        android:label="OpponentChooserFragment"
+        tools:layout="@layout/fragment_players_count_chooser">
+        <action
+            android:id="@+id/toPlayerTypesChooser"
+            app:destination="@id/setupPlayersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupPlayersFragment"
+        android:name="com.safi.dicegame.ui.setupGame.setupPlayers.SetupPlayersFragment"
+        android:label="SetupPlayersFragment"
+        tools:layout="@layout/fragment_setup_players">
+        <argument
+            android:name="numberOfPlayers"
+            app:argType="integer" />
+        <action
+            android:id="@+id/toTargetChooserFragment"
+            app:destination="@id/targetChooserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/targetChooserFragment"
+        android:name="com.safi.dicegame.ui.setupGame.targetChooser.TargetChooserFragment"
+        android:label="TargetChooserFragment"
+        tools:layout="@layout/fragment_target_chooser">
+        <action
+            android:id="@+id/to_gameTypeChooserFragment"
+            app:destination="@id/gameTypeChooserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameTypeChooserFragment"
+        android:name="com.safi.dicegame.ui.setupGame.gameTypeChooser.GameTypeChooserFragment"
+        android:label="GameTypeChooserFragment"
+        tools:layout="@layout/fragment_game_type_chooser" />
+</navigation>

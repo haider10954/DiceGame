@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DiceGame</string>
+    <string name="players_count_chooser_screen_title">How many players are there?</string>
+    <string name="players_count_chooser_screen_hint">Min 2 and Max 6</string>
+    <string name="players_count_chooser_screen_cta">Next</string>
+    <string name="player_setup_screen_name_hint">Name</string>
+    <string name="player_setup_screen_number_hint">Number</string>
+    <string name="player_setup_screen_title">Setup Players</string>
+    <string name="setup_players_screen_rb_human_title">Human</string>
+    <string name="setup_players_screen_rb_robot_title">Robot</string>
+    <string name="setup_players_screen_cta">Next</string>
+    <string name="target_chooser_screen_title">Target to Win?</string>
+    <string name="target_chooser_screen_cta">Next</string>
+    <string name="target_chooser_screen_hint">Min 6 and Max 26</string>
+    <string name="game_play_screen_title">Current Turn: %d</string>
+    <string name="game_play_screen_cta">Roll Dice</string>
+    <string name="game_play_screen_dice_result">Dice Result: %d</string>
+    <string name="game_play_screen_player_name_label">Name</string>
+    <string name="game_play_screen_player_number_label">Number</string>
+    <string name="game_play_screen_player_score_label">Score</string>
+    <string name="game_type_chooser_screen_title">Choose Game Type</string>
+    <string name="game_type_chooser_screen_cta1">Game type 1</string>
+    <string name="game_type_chooser_screen_cta2">Game type 2</string>
+</resources>
